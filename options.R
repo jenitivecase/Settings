@@ -1,5 +1,6 @@
 options(scipen = 999)
 options(stringsAsFactors = FALSE)
+options(warn = 1)
 
 date <- format.Date(Sys.Date(), "%Y%m%d")
 
