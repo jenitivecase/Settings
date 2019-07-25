@@ -19,8 +19,11 @@ theme_set(theme_bw())
 ATI_colors <- c("#E53935", "#80D8FF", "#FFD54F", "#009688", "#FF9800", "#CDDC39",
                 "#AB000D", "#49A7CC", "#C8A415", "#00675B", "#C66900", "#99AA00")
 		
-#------------------blue-------red-------green------purple-----lt blue------orange		
+#------------------blue-------red-------green------purple-----lt blue-----orange		
 NHA_colors <- c("#4f81bd", "#c0504d", "#9bbb59", "#8064a2", "#4bacc6", "#f79646")
+
+#-----------------orange----dk grey-----dk blue----lt blue----md grey---lt grey		
+Kog_colors <- c("#e4832b", "#393939", "#0a3c55", "#0e94ba", "#666666", "#cccccc")
 
 logit2prob <- function(logit){
   odds <- exp(logit)
