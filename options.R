@@ -25,6 +25,7 @@ NHA_colors <- c("#4f81bd", "#c0504d", "#9bbb59", "#8064a2", "#4bacc6", "#f79646"
 #-----------------orange----dk grey-----dk blue----lt blue----md grey---lt grey		
 Kog_colors <- c("#e4832b", "#393939", "#0a3c55", "#0e94ba", "#666666", "#cccccc")
 
+
 logit2prob <- function(logit){
   odds <- exp(logit)
   prob <- odds / (1 + odds)
@@ -37,3 +38,9 @@ fct_case_when <- function(...) {
   levels <- levels[!is.na(levels)]
   factor(dplyr::case_when(...), levels=levels)
 }
+
+kog_theme <-  theme(legend.position = "none",
+                    legend.title = element_blank(),
+                    panel.grid.major.x = element_blank(),
+                    panel.border = element_blank(),
+                    text = element_text(size = 12, face = "bold")) 
