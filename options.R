@@ -43,4 +43,7 @@ kog_theme <-  theme(legend.position = "none",
                     legend.title = element_blank(),
                     panel.grid.major.x = element_blank(),
                     panel.border = element_blank(),
-                    text = element_text(size = 12, face = "bold")) 
+                    text = element_text(size = 12, face = "bold"),
+                    plot.caption = element_text(face= "italic"), #Default is hjust=1; can set to 0
+                    plot.title.position = "plot", #NEW parameter. Apply for subtitle too.
+                    plot.caption.position =  "plot") #NEW parameter
