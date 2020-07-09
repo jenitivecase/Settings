@@ -11,7 +11,8 @@ load_packages <- function(x) {
   }
   suppressPackageStartupMessages(require(x, character.only = TRUE))
 }
-sapply(needed_packages, load_packages)
+
+# sapply(needed_packages, load_packages)
 
 theme_set(theme_bw())
 
@@ -37,6 +38,12 @@ fct_case_when <- function(...) {
   levels <- sapply(args[-1], function(f) f[[3]])  # extract RHS of formula
   levels <- levels[!is.na(levels)]
   factor(dplyr::case_when(...), levels=levels)
+}
+
+simpleCap <- function(x) {
+  s <- strsplit(x, " ")[[1]]
+  paste(toupper(substring(s, 1,1)), substring(s, 2),
+        sep="", collapse=" ")
 }
 
 kog_theme <-  theme(legend.position = "none",
