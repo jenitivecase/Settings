@@ -15,6 +15,10 @@ sapply(needed_packages, load_packages)
 
 theme_set(theme_bw())
 
+JB_palette <- c("#712d76","#3e92cc","#f25f5c","#41b491","#f6bd60","#ff9233")
+
+celestial_palette <- c("#ac3ec1", "#477bd1", "#46b298", "#90ba4c", "#dd9d31", "#e25247")
+
 #------------------red--------blue-----yellow------teal------orange------lime
 ATI_colors <- c("#E53935", "#80D8FF", "#FFD54F", "#009688", "#FF9800", "#CDDC39",
                 "#AB000D", "#49A7CC", "#C8A415", "#00675B", "#C66900", "#99AA00")
@@ -79,8 +83,6 @@ linetrunc <- function(textstring, linewidth, tol = c(5, 5), capwidth = 1.2, sepa
   return(out)
 }
 
-
-cat(linetrunc("What is the optimal length of string? I have no idea.", 30, 3))
 
 kog_theme <-  theme(legend.position = "none",
                     legend.title = element_blank(),
