@@ -1,10 +1,19 @@
+################################################################################
+#### OPTIONS ##################################################################
+################################################################################
+
 options(scipen = 999)
 options(stringsAsFactors = FALSE)
 options(warn = 1)
 
 date <- format.Date(Sys.Date(), "%Y%m%d")
 
-needed_packages <- c("dplyr", "tidyr", "openxlsx", "ggplot2")
+
+################################################################################
+#### PACKAGES ##################################################################
+################################################################################
+
+needed_packages <- c("dplyr", "tidyr", "openxlsx", "ggplot2", "RODBC")
 load_packages <- function(x) {
   if (!(x %in% rownames(installed.packages()))) {
     install.packages(x)
@@ -13,22 +22,20 @@ load_packages <- function(x) {
 }
 sapply(needed_packages, load_packages)
 
+
+################################################################################
+#### GGPLOT ####################################################################
+################################################################################
+
 theme_set(theme_bw())
 
 JB_palette <- c("#712d76","#3e92cc","#f25f5c","#41b491","#f6bd60","#ff9233")
 
 celestial_palette <- c("#ac3ec1", "#477bd1", "#46b298", "#90ba4c", "#dd9d31", "#e25247")
 
-#------------------red--------blue-----yellow------teal------orange------lime
-ATI_colors <- c("#E53935", "#80D8FF", "#FFD54F", "#009688", "#FF9800", "#CDDC39",
-                "#AB000D", "#49A7CC", "#C8A415", "#00675B", "#C66900", "#99AA00")
-		
-#------------------blue-------red-------green------purple-----lt blue-----orange		
-NHA_colors <- c("#4f81bd", "#c0504d", "#9bbb59", "#8064a2", "#4bacc6", "#f79646")
-
-#-----------------orange----dk grey-----dk blue----lt blue----md grey---lt grey		
-Kog_colors <- c("#e4832b", "#393939", "#0a3c55", "#0e94ba", "#666666", "#cccccc")
-
+################################################################################
+#### FUNCTIONS #################################################################
+################################################################################
 
 logit2prob <- function(logit){
   odds <- exp(logit)
@@ -83,6 +90,20 @@ linetrunc <- function(textstring, linewidth, tol = c(5, 5), capwidth = 1.2, sepa
   return(out)
 }
 
+################################################################################
+#### ASCEND STUFF ##############################################################
+################################################################################
+
+
+#------------------red--------blue-----yellow------teal------orange------lime
+ATI_colors <- c("#E53935", "#80D8FF", "#FFD54F", "#009688", "#FF9800", "#CDDC39",
+                "#AB000D", "#49A7CC", "#C8A415", "#00675B", "#C66900", "#99AA00")
+
+#------------------blue-------red-------green------purple-----lt blue-----orange		
+NHA_colors <- c("#4f81bd", "#c0504d", "#9bbb59", "#8064a2", "#4bacc6", "#f79646")
+
+#-----------------orange----dk grey-----dk blue----lt blue----md grey---lt grey		
+Kog_colors <- c("#e4832b", "#393939", "#0a3c55", "#0e94ba", "#666666", "#cccccc")
 
 kog_theme <-  theme(legend.position = "none",
                     legend.title = element_blank(),
@@ -92,3 +113,5 @@ kog_theme <-  theme(legend.position = "none",
                     plot.caption = element_text(face= "italic"), #Default is hjust=1; can set to 0
                     plot.title.position = "plot", #NEW parameter. Apply for subtitle too.
                     plot.caption.position =  "plot") #NEW parameter
+
+
