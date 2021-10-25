@@ -90,6 +90,19 @@ linetrunc <- function(textstring, linewidth, tol = c(5, 5), capwidth = 1.2, sepa
   return(out)
 }
 
+likert_labeler <- function(levels){
+  indices_to_keep <- c(1, ceiling(length(levels)/2), length(levels))
+  indices_to_discard <- seq(1, length(levels), 1)
+  indices_to_discard <- indices_to_discard[!indices_to_discard %in% indices_to_keep]
+  
+  response_labels <- levels
+  response_labels[indices_to_discard] <- ""
+  response_labels[indices_to_keep] <- paste0(indices_to_keep, ": ", response_labels[indices_to_keep])
+  
+  return(response_labels)
+}
+
+
 ################################################################################
 #### ASCEND STUFF ##############################################################
 ################################################################################
