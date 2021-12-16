@@ -113,25 +113,25 @@ TK_colors <- c("#20535D", "#87B444", "#009EB5", "#F15D21", "#638432", "#133238",
 ################################################################################
 #### ASCEND STUFF ##############################################################
 ################################################################################
-
-
-#------------------red--------blue-----yellow------teal------orange------lime
-ATI_colors <- c("#E53935", "#80D8FF", "#FFD54F", "#009688", "#FF9800", "#CDDC39",
-                "#AB000D", "#49A7CC", "#C8A415", "#00675B", "#C66900", "#99AA00")
-
-#------------------blue-------red-------green------purple-----lt blue-----orange		
-NHA_colors <- c("#4f81bd", "#c0504d", "#9bbb59", "#8064a2", "#4bacc6", "#f79646")
-
-#-----------------orange----dk grey-----dk blue----lt blue----md grey---lt grey		
-Kog_colors <- c("#e4832b", "#393939", "#0a3c55", "#0e94ba", "#666666", "#cccccc")
-
-kog_theme <-  theme(legend.position = "none",
-                    legend.title = element_blank(),
-                    panel.grid.major.x = element_blank(),
-                    panel.border = element_blank(),
-                    text = element_text(size = 12, face = "bold"),
-                    plot.caption = element_text(face= "italic"), #Default is hjust=1; can set to 0
-                    plot.title.position = "plot", #NEW parameter. Apply for subtitle too.
-                    plot.caption.position =  "plot") #NEW parameter
-
+# 
+# 
+# #------------------red--------blue-----yellow------teal------orange------lime
+# ATI_colors <- c("#E53935", "#80D8FF", "#FFD54F", "#009688", "#FF9800", "#CDDC39",
+#                 "#AB000D", "#49A7CC", "#C8A415", "#00675B", "#C66900", "#99AA00")
+# 
+# #------------------blue-------red-------green------purple-----lt blue-----orange		
+# NHA_colors <- c("#4f81bd", "#c0504d", "#9bbb59", "#8064a2", "#4bacc6", "#f79646")
+# 
+# #-----------------orange----dk grey-----dk blue----lt blue----md grey---lt grey		
+# Kog_colors <- c("#e4832b", "#393939", "#0a3c55", "#0e94ba", "#666666", "#cccccc")
+# 
+# kog_theme <-  theme(legend.position = "none",
+#                     legend.title = element_blank(),
+#                     panel.grid.major.x = element_blank(),
+#                     panel.border = element_blank(),
+#                     text = element_text(size = 12, face = "bold"),
+#                     plot.caption = element_text(face= "italic"), #Default is hjust=1; can set to 0
+#                     plot.title.position = "plot", #NEW parameter. Apply for subtitle too.
+#                     plot.caption.position =  "plot") #NEW parameter
+# 
 
